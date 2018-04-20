@@ -14,14 +14,15 @@ CC = gcc
 
 NAME = vlvereta.filler
 
-OBJ = srcs/filler.o
+OBJ = srcs/filler.o srcs/get_info.o srcs/get_info_helpers.o \
+	srcs/finder.o srcs/M_distance.o srcs/list_functions.o
 
 FLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) -o $(NAME) $(OBJ) -L./_includes -lft
+	$(CC) -o $(NAME) $(OBJ) -L./includes -lft
 
 %.o: %.c
 	$(CC) -o $@ -c $< $(FLAGS)
