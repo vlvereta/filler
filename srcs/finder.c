@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../includes/filler.h"
+#include "filler.h"
 
 int		find_position(t_filler *f)
 {
@@ -66,6 +66,7 @@ int		find_best_position(t_pp **head)
 	t_pp	*temp;
 
 	index = ERROR;
+	// printf("HERE <--\n");
 	if (head && *head)
 	{
 		temp = *head;
@@ -74,6 +75,8 @@ int		find_best_position(t_pp **head)
 		temp = temp->next;
 		while (temp)
 		{
+		// 	printf("---> dis - %d\n", temp->distance);
+		// 	printf("--> index - %d\n", temp->index);
 			if (temp->distance < dis)
 			{
 				dis = temp->distance;

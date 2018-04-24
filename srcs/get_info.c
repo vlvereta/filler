@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../includes/filler.h"
+#include "filler.h"
 
 int		get_info(t_filler *f)
 {

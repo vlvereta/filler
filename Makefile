@@ -19,20 +19,28 @@ OBJ = srcs/filler.o srcs/get_info.o srcs/get_info_helpers.o \
 
 FLAGS = -Wall -Wextra -Werror
 
+LIBFT = make -C $(LIB_FOLDER)
+
+LIB_FOLDER = ./libft/
+
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) -o $(NAME) $(OBJ) -L./includes -lft
+	@	$(LIBFT)
+	@	$(CC) -o $(NAME) $(OBJ) -L$(LIB_FOLDER) -lft
 
 %.o: %.c
-	$(CC) -o $@ -c $< $(FLAGS)
+	@	$(CC) -o $@ -c $< -Iincludes $(FLAGS)
 
 clean:
-	rm -f $(OBJ)
+	@	make -C $(LIB_FOLDER) clean
+	@	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@	make -C $(LIB_FOLDER) fclean
+	@	rm -f $(NAME)
 
-re: fclean $(NAME)
+re: fclean all
 
 .PHONY: all clean fclean re

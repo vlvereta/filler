@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./../includes/filler.h"
+#include "filler.h"
 
 int		find_min_distance_1(int index, t_filler *f)
 {

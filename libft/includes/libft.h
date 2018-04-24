@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "get_next_line.h"
 
 /*
 **	Mandatory part of the project: Part I - Libc functions.
@@ -101,16 +102,9 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 **	Extra functions added after pass the project.
 */
 
-size_t				ft_countwords(char const *s, int c);
-void				ft_swap(int *a, int *b);
 int					ft_isupper(int c);
 int					ft_islower(int c);
-size_t				ft_power(int n);
-int					ft_sqrt(int nb);
-int					ft_binarysearch(int tab[], int len, int number);
-void				ft_sort_array_nb(int tab[], int size);
 char				*ft_itoa_base(long long value, int base);
-
 int					get_next_line(const int fd, char **line);
 
 #endif
